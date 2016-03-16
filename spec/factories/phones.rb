@@ -6,6 +6,7 @@ FactoryGirl.define do
   end
 
   factory :invalid_phone, parent: :phone do |f|
-    f.number = nil
+    f.number nil
+    f.contact_id nil
   end
 end

@@ -95,7 +95,7 @@ RSpec.describe ContactsController, type: :controller do
         expect(assigns(:contact)).to eq(@contact)
       end
 
-      it "does not change @@contact's attributes" do
+      it "does not change @contact's attributes" do
         put :update, id: @contact, contact: FactoryGirl.attributes_for(:invalid_contact, first_name:"Larry", last_name: nil)
         @contact.reload
         expect(@contact.first_name).not_to eq("Larry")

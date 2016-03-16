@@ -20,6 +20,21 @@ class PhonesController < ApplicationController
     end
   end
 
+  def update
+    @phone = Phone.find(params[:id])
+    if @phone.update(phone_params)
+      redirect_to phone_path(@phone)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @phone = Phone.find(params[:id])
+    @phone.destroy
+    redirect_to phones_path
+  end
+
   private
 
   def phone_params
